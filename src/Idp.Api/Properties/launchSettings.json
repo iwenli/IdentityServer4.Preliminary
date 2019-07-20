@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Idp.Api": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "api/users",
+      "applicationUrl": "http://localhost:5010",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}

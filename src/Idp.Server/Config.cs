@@ -22,7 +22,7 @@ namespace Idp
         {
             return new ApiResource[]
             {
-                new ApiResource("api1", "My API #1")
+                new ApiResource("userCenter", "超市用户中心接口")
             };
         }
 
@@ -30,16 +30,16 @@ namespace Idp
         {
             return new[]
             {
-                // client credentials flow client
+                // 客户端凭证
                 new Client
                 {
-                    ClientId = "client",
-                    ClientName = "Client Credentials Client",
+                    ClientId = "ConsoleClientCredentials",
+                    ClientName = "受保护的客户端凭证",
 
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    ClientSecrets = { new Secret("511536EF-F270-4058-80CA-1C89C192F69A".Sha256()) },
+                    ClientSecrets = { new Secret("ConsoleClientCredentials".Sha256()) },
 
-                    AllowedScopes = { "api1" }
+                    AllowedScopes = { "userCenter" }
                 },
 
                 // MVC client using hybrid flow

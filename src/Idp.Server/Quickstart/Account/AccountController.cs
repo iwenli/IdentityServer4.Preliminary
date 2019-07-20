@@ -84,9 +84,9 @@ namespace IdentityServer4.Quickstart.UI
             {
                 if (context != null)
                 {
-                    // if the user cancels, send a result back into IdentityServer as if they 
-                    // denied the consent (even if this client does not require consent).
-                    // this will send back an access denied OIDC error response to the client.
+                    // 如果用户取消,结果发送回服务器好像他们身份
+                    // 拒绝同意(即使这个客户不需要同意)。
+                    // 这将返回一个拒绝访问OIDC错误响应给客户端。
                     await _interaction.GrantConsentAsync(context, ConsentResponse.Denied);
 
                     // we can trust model.ReturnUrl since GetAuthorizationContextAsync returned non-null
