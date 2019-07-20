@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Ids.Client1
+namespace Ids.Client.Consoles
 {
     public class ClientCredentialsDemo
     {

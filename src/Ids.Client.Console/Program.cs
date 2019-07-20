@@ -3,7 +3,7 @@ using System;
 using System.Net.Http;
 using System.Threading.Tasks;
 
-namespace Ids.Client1
+namespace Ids.Client.Consoles
 {
     class Program
     {

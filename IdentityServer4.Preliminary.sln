@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idp.Server", "src\Idp.Serve
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Idp.Api", "src\Idp.Api\Idp.Api.csproj", "{B574788D-5C34-4EFD-ACF6-FC746667309A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ids.Client.Console", "src\Ids.Client.Console\Ids.Client.Console.csproj", "{9DF21931-D137-4E99-9DEC-BC38696E119F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ids.Client.Consoles", "src\Ids.Client.Console\Ids.Client.Consoles.csproj", "{9DF21931-D137-4E99-9DEC-BC38696E119F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
