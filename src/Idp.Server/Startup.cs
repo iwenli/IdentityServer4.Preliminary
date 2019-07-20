@@ -40,7 +40,8 @@ namespace Idp
                 options.Events.RaiseFailureEvents = true;
                 options.Events.RaiseSuccessEvents = true;
             })
-                .AddTestUsers(TestUsers.Users);
+                .AddTestUsers(TestUsers.Users)
+                .AddTestUsers(Config.GetUsers());
 
             // in-memory, code config
             builder.AddInMemoryIdentityResources(Config.GetIdentityResources());

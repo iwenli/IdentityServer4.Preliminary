@@ -12,5 +12,14 @@ namespace Idp.Api.Controller
     [Authorize]
     public class IdentityController : ControllerBase
     {
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return new JsonResult(User.Claims.Select(m => new
+            {
+                m.Type,
+                m.Value
+            }));
+        }
     }
 }

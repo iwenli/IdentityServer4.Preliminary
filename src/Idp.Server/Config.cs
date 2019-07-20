@@ -3,12 +3,31 @@
 
 
 using IdentityServer4.Models;
+using IdentityServer4.Test;
 using System.Collections.Generic;
 
 namespace Idp
 {
     public static class Config
     {
+        public static List<TestUser> GetUsers()
+        {
+            return new List<TestUser>
+                    {
+                        new TestUser
+                        {
+                            SubjectId = "1",
+                            Username = "zhangsan",
+                            Password = "password"
+                        },
+                        new TestUser
+                        {
+                            SubjectId = "2",
+                            Username = "lisi",
+                            Password = "password"
+                        }
+                    };
+        }
         public static IEnumerable<IdentityResource> GetIdentityResources()
         {
             return new IdentityResource[]
@@ -30,14 +49,24 @@ namespace Idp
         {
             return new[]
             {
-                // 客户端凭证
+                // 使用客户端凭据保护API
                 new Client
                 {
                     ClientId = "ConsoleClientCredentials",
-                    ClientName = "受保护的客户端凭证",
+                    ClientName = "受保护的客户端凭证包含api资源",
 
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     ClientSecrets = { new Secret("ConsoleClientCredentials".Sha256()) },
+
+                    AllowedScopes = { "userCenter" }
+                },
+                // 
+                new Client{
+                    ClientId = "PasswordClient",
+                    ClientName= "资源所有者密码授予客户端保护api资源",
+
+                    AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
+                    ClientSecrets = { new Secret("PasswordClient".Sha256()) },
 
                     AllowedScopes = { "userCenter" }
                 },
